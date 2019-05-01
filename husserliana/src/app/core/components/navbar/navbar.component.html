@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="#">Husserliana</a>
@@ -24,9 +25,20 @@
           <a class="nav-link" [routerLink]="'bibliography'">Библиография</a>
         </li>
     </ul>
-    <form class="form-inline my-0 my-sm-0">
-      <input class="form-control mr-sm-0" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-primary my-1 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" 
+        type="button" id="dropdownMenuButton" 
+        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Translate
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <button class="dropdown-item" 
+          (click)="switchLanguage('ru')" href="#">{{ "Title" | translate }}</button>
+          <button class="dropdown-item" 
+          (click)="switchLanguage('end')" href="#">{{ "Title" | translate }}</button>
+          <button class="dropdown-item" 
+          (click)="switchLanguage('de')" href="#">{{ "Title" | translate }}E</button>
+        </div>
+      </div>
   </div>
 </nav>
