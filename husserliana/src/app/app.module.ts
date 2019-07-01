@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { Translate } from './feature/translate-module/translate.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import AppRoutingModule from '../app/feature/app-routing/app-routing.module';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
@@ -18,6 +17,7 @@ import { HusserlComponent } from './core/components/husserl/husserl.component';
 import { GalleryComponent } from './core/components/gallery/gallery.component';
 import { BibliographyComponent } from './core/components/bibliography/bibliography.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
+import { SpringerApiService } from './shared/springer-api.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../../assets/i18n/', '.json');
@@ -37,7 +37,6 @@ export function HttpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
-    Translate,
     BrowserAnimationsModule,
     AppRoutingModule,
     TranslateModule.forRoot({
@@ -50,7 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   HttpClientModule
   ],
   exports: [],
-  providers: [],
+  providers: [SpringerApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

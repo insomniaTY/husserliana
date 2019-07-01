@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
   <div class="container">
     <a class="navbar-brand" href="#">Husserliana</a>
@@ -25,19 +24,23 @@
           <a class="nav-link" [routerLink]="'bibliography'">Библиография</a>
         </li>
     </ul>
-    <div class="dropdown">
+    <div translate class="dropdown">
         <button class="btn btn-light dropdown-toggle" 
         type="button" id="dropdownMenuButton" 
         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Translate
         </button>
+        <button class="btn btn-light">Login</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <button class="dropdown-item" 
-          (click)="switchLanguage('ru')" href="#">{{ "Title" | translate }}</button>
-          <button class="dropdown-item" 
-          (click)="switchLanguage('end')" href="#">{{ "Title" | translate }}</button>
-          <button class="dropdown-item" 
-          (click)="switchLanguage('de')" href="#">{{ "Title" | translate }}E</button>
+          <button class="dropdown-item btn-light" (click)="changeLanguage('ru')">
+            ru
+          </button>
+          <button class="dropdown-item btn-light" (click)="changeLanguage('en')">
+            en
+          </button>
+          <button class="dropdown-item btn-light" (click)="changeLanguage('de')">
+            de
+          </button>
         </div>
       </div>
   </div>

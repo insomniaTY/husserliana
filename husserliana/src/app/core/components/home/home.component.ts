@@ -11,12 +11,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HomeComponent implements OnInit {
 
   constructor( private translate: TranslateService ) {
-    translate.setDefaultLang('ru');
   }
-  switchLanguage(language: string) {
-    this.translate.use(language);
-  }
-
   ngOnInit() {
   }
 

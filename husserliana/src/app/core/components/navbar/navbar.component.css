@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    flex-direction: row-reverse;
+    align-items: flex-end;
     
 }
 
@@ -8,3 +8,14 @@
     font-family: 'Lato', sans-serif;
   }
   
+
+.row {
+    display: flex;
+    align-items: flex-end;
+    width: 1150px;
+}
+
+.modal-dialog {
+    display: flex;
+
+}

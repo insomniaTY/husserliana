@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
   styleUrls: ['./works.component.css']
 })
-export class WorksComponent implements OnInit {
+export class WorksComponent {
+  api: string = '2956a6999c184b87462887c5d518b26c';
+  response: any;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  constructor(private http: HttpClient) { }
+  
 }
