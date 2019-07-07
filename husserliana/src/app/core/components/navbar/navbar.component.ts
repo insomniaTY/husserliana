@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 
@@ -7,19 +7,15 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit  {
+export class NavbarComponent   {
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('ru');
-    
-  }
 
-  ngOnInit() {
-    this.translate.use('en')
-    this.translate.use('de')
-  }
+    translate.addLangs(['eng', 'de']);
+    translate.setDefaultLang('ru');
 
-  changeLanguage(lang: string) {
-    this.translate.use(lang);
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|de/) ? browserLang : 'ru');
     
   }
 }

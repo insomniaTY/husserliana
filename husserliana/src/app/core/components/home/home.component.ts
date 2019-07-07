@@ -1,5 +1,4 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { trigger, state, style, animate, transition, animation } from '@angular/animations';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -11,8 +10,12 @@ import { TranslateService } from '@ngx-translate/core';
 export class HomeComponent implements OnInit {
 
   constructor( private translate: TranslateService ) {
+    
   }
+
+  
   ngOnInit() {
+    this.translate.use('ru')
   }
 
 }
