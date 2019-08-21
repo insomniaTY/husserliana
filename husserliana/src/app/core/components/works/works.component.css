@@ -1,0 +1,11 @@
+.text {
+    background-color: blue;
+    height: 100%;
+}
+
+.text-1 {
+    color: aliceblue;
+    margin: 100px;
+    padding: 100px;
+    font-size: 50px;
+}

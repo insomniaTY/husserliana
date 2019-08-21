@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import AppRoutingModule from '../app/feature/app-routing/app-routing.module';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
@@ -19,10 +19,12 @@ import { BibliographyComponent } from './core/components/bibliography/bibliograp
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { SpringerApiService } from './shared/springer-api.service';
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../../assets/i18n/', '.json');
 }
-
+const API_KEY = 
+new InjectionToken('api_token');
 
 @NgModule({
   declarations: [
@@ -49,7 +51,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   HttpClientModule
   ],
   exports: [],
-  providers: [SpringerApiService],
+  providers: [
+    { provide: SpringerApiService, useClass: SpringerApiService },
+    { provide: API_KEY, useValue: API_KEY}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

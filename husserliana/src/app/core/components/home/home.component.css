@@ -5,28 +5,66 @@
 .jumbotron-fluid {
   display: flex;
   background-image: url('https://images.unsplash.com/photo-1554388648-dc1f174f09f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60');
-  height: 80vh;
+  height: 100%;
   background-repeat: no-repeat;
   background-size: 1350px;
+  margin: 40px;
+  border-radius: 5px;
 }
 
 h1 {
     font-family: 'Karla', sans-serif;
     font-size: 20px bolt;
     color: white;
-    margin-top: 20px;
-
 }
 
-.card {
+@media  (min-width:1200px) {
+  .jumbotron-fluid {  
+    height: 600px;
+  }
+}
+
+.section-bio {
+  /* display: flex;
+  align-content: space-between;  */
+  background-color: lightcoral;
+  padding: 90px;
+  width: 1334px;
+  height: 600px;
+  margin: 35px;
+}
+
+
+@media  (min-width:768px) {
+  .section-bio {
+    align-content: flex-start;
+  }
+}
+
+
+.footer {
+  background-color: black;
+  height: 400px;
   display: flex;
-  justify-content: center;
-  align-self: stretch;
-  flex-direction: row;
+  flex-basis: 1200px;
+  padding: 20px;
+  flex-direction: row-reverse;
 }
 
-.btn-primary {
-  margin: 5px;
-  padding: 10px;
-  width: 50px;
+.btn {
+  height: 40px;
+  margin: 15px;
+}
+
+.span4 {
+  color: azure;
+  font-size: 6vh;
+}
+
+.link-route {
+  font-size: 50px;
+}
+
+.display-3 {
+  font-size: 50px;
 }

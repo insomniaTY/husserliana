@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import * as d3 from 'd3';
+
+
 
 @Component({
   selector: 'app-bio',
@@ -9,7 +12,9 @@ export class BioComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
+    
   }
 
 }

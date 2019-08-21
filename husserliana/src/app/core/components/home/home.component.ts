@@ -12,10 +12,13 @@ export class HomeComponent implements OnInit {
   constructor( private translate: TranslateService ) {
     
   }
-
   
   ngOnInit() {
     this.translate.use('ru')
+  }
+
+  onNavigate(url: string){
+    window.open(url, "_blank");
   }
 
 }

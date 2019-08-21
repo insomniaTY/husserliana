@@ -16,11 +16,19 @@ import { GalleryComponent } from 'src/app/core/components/gallery/gallery.compon
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'bio', component: BioComponent},
-  { path: 'works', component: WorksComponent },
+  { path: 'bio', component: BioComponent, children: [
+    { path: '', redirectTo: 'app-bio', pathMatch: 'full' }
+  ]},
+  { path: 'works', component: WorksComponent, children: [
+    { path: '', redirectTo: 'app-works', pathMatch: 'full' }
+  ] },
   { path: 'husserl', component: HusserlComponent },
-  { path: 'gallery', component: GalleryComponent },
-  { path: 'bibliography', component: BibliographyComponent }
+  { path: 'gallery', component: GalleryComponent, children: [
+    { path: '', redirectTo: 'app-gallery', pathMatch: 'full' }
+  ]},
+  { path: 'bibliography', component: BibliographyComponent, children: [
+  { path: '', redirectTo: 'app-bibliography', pathMatch: 'full' }
+  ]}
 ];
 
 @NgModule({
