@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap&subset=cyrillic');
+}
+
+body {
+  box-sizing: border-box;
+}
+
+
+.phenomenology {
+  padding-bottom: 10%;
+  cursor: pointer;
+  height: 10%;
+}
+
+.ph {
+    cursor: pointer;
+    height: 10%;
+    padding-bottom: 20px;
+}
+
+.lead {
+    padding: 30px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.display-4 {
+  padding: 30px;
+  font-size: 30px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}

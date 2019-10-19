@@ -5,7 +5,7 @@ import AppRoutingModule from '../app/feature/app-routing/app-routing.module';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -18,14 +18,11 @@ import { GalleryComponent } from './core/components/gallery/gallery.component';
 import { BibliographyComponent } from './core/components/bibliography/bibliography.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { SpringerApiService } from './shared/springer-api.service';
-
+import { AuthKeyInterceptor } from '../app/shared/springer-token.interceptor';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../../assets/i18n/', '.json');
 }
-const API_KEY = 
-new InjectionToken('api_token');
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +50,7 @@ new InjectionToken('api_token');
   exports: [],
   providers: [
     { provide: SpringerApiService, useClass: SpringerApiService },
-    { provide: API_KEY, useValue: API_KEY}
+    { provide: HTTP_INTERCEPTORS, useClass: AuthKeyInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

@@ -16,6 +16,5 @@ export class NavbarComponent   {
 
     const browserLang = translate.getBrowserLang();
     translate.use(browserLang.match(/en|de/) ? browserLang : 'ru');
-    
   }
 }

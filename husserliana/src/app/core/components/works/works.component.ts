@@ -10,11 +10,22 @@ import { map } from 'rxjs/operators/map';
   styleUrls: ['./works.component.css']
 })
 export class WorksComponent implements OnInit{
- constructor(private SpringerService: SpringerApiService) {}
-  
-  ngOnInit() {
-    return this.SpringerService.getData()
-    .subscribe(res => res)
-  }
+  @Input() name: string;
 
+  document$: Observable<any>;
+  manual: any;
+
+ constructor(private SpringerService: SpringerApiService) {}
+
+ ngOnInit() {
+   this.document$ = this.SpringerService.getDocument('10.1007/BF01201962');
+
+   this.SpringerService
+   .getDocument('10.1007/BF01201962')
+   .subscribe(
+     (result) => this.manual = result,
+     (error) => console.log(error),
+     () => console.log('request complete')
+   )
+ }
 }

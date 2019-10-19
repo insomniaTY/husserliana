@@ -7,20 +7,45 @@
   </div>
 </div>
 
+<!-- <div
+(click)="multiState = multiState == 'start' ? 'end' : 'start'"
+[@multi]="multiState"
+></div> -->
 
-<section class="section-bio jumbotron col-md-12">
-  <h1 class="display-3">
-    Вы можете познакомиться с <a href="/bio">биографией Гуссерля</a>, 
-    <a class="link-route" href="/works">его работами</a>, 
-    <a class="link-route" href="/bibliography">библиографией его изданий и работ</a>, посвященных Гуссерлю и феноменологии, 
-    <a class="link-route" href="/gallery">фотогалереей Гуссерля</a>, его учителей, коллег и учеников, а также ссылками на другие сайты о Гуссерле и о феноменологии.
-  </h1>
-</section>
 
-<footer class="footer">
-  <span class="span4">developed by Andrii Barchuk</span>
-  <div class="col-lg-6">
-      <a (click)="onNavigate()" class="btn btn-info" href="http://existenz.ty@gmail.com">Email</a>
-      <a (click)="onNavigate()" class="btn btn-info" href="http://linkedin.com/in/existenz">LinkedIn</a>
+<!-- <div
+  (mousedown)="clickedDivState = 'active'"
+  (click)="changeDivState()"
+  [@clickedDiv]="clickedDivState"
+></div> -->
+
+  <div class="row justify-content-center">
+      <img (click)="changeImgState = changeImgState === 'initial' ? 'final' : 'initial'"
+      [@flip]="changeImgState"
+      class="rounded-circle"
+      src="../../../../assets/husserl.jpg" alt="husserl">
   </div>
-</footer>
+
+  <div class="routes-bloc row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <img class="icon" src="../../../../assets/icons8-create-64.png" alt="icon">
+            <a class="display-3" href="/bio">Вы можете познакомиться с биографией Гуссерля</a>
+        </div>
+        <div class="col-md-2">
+            <img class="icon" src="../../../../assets/icons8-book-64.png" alt="icon">
+            <a class="display-3" href="/bibliography">Вы можете познакомиться с его работами Гуссерля</a>
+        </div>
+        <div class="col-md-2">
+            <img class="icon" src="../../../../assets/icons8-scroll-64.png" alt="icon">
+            <a class="display-3" href="/bibliography">Вы можете познакомиться с библиографией его изданий и работ</a>
+        </div>
+        <div class="col-lg-2">
+            <img class="icon" src="../../../../assets/icons8-compact-camera-64.png" alt="icon">
+            <a class="display-3" href="/gallery">Вы можете познакомиться с фотогалереей Гуссерля</a>
+        </div>
+      </div>
+
+
+
+
