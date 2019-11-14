@@ -11,10 +11,14 @@ import { HusserlComponent } from 'src/app/core/components/husserl/husserl.compon
 import { WorksComponent } from 'src/app/core/components/works/works.component';
 import { BibliographyComponent } from 'src/app/core/components/bibliography/bibliography.component';
 import { GalleryComponent } from 'src/app/core/components/gallery/gallery.component';
-
+import { LoginComponent } from '../../core/components/login/login.component';
 
 
 const routes: Routes = [
+  // {path: '', component: LoginComponent, children: [
+  //   {path: '', redirectTo: 'app-login', pathMatch: 'full'}
+  // ]},
+  {path: '', component: HomeComponent},
   { path: '', component: HomeComponent},
   { path: 'bio', component: BioComponent, children: [
     { path: '', redirectTo: 'app-bio', pathMatch: 'full' }

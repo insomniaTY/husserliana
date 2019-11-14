@@ -6,7 +6,13 @@ import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { NgwWowModule } from 'ngx-wow';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 import { AppComponent } from './app.component';
@@ -17,8 +23,13 @@ import { HusserlComponent } from './core/components/husserl/husserl.component';
 import { GalleryComponent } from './core/components/gallery/gallery.component';
 import { BibliographyComponent } from './core/components/bibliography/bibliography.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
-import { SpringerApiService } from './shared/springer-api.service';
+import { LoginComponent } from './core/components/login/login.component';
+
+import { GoogleBookService } from './shared/google-book.service';
 import { AuthKeyInterceptor } from '../app/shared/springer-token.interceptor';
+import { AuthFirebaseService } from './shared/auth-firebase.service';
+import { environment } from 'src/environments/environment';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../../assets/i18n/', '.json');
@@ -32,7 +43,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HusserlComponent,
     GalleryComponent,
     BibliographyComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +57,19 @@ export function HttpLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
       }
   }),
-  HttpClientModule
+  HttpClientModule,
+  ReactiveFormsModule,
+  FormsModule,
+  NgwWowModule,
+  AngularFireModule.initializeApp(environment.firebase),
+  AngularFireAuthModule,
+  AngularFirestoreModule
   ],
   exports: [],
   providers: [
-    { provide: SpringerApiService, useClass: SpringerApiService },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthKeyInterceptor, multi: true }
+    { provide: GoogleBookService, useClass: GoogleBookService },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthKeyInterceptor, multi: true },
+    {provide: AuthFirebaseService, useClass: AuthFirebaseService}
   ],
   bootstrap: [AppComponent]
 })

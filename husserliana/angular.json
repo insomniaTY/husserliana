@@ -24,10 +24,11 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/animate.css/animate.css",
               "src/styles.css"
             ],
             "scripts": [
-              
+              "node_modules/wowjs/dist/wow.js"
             ],
             "es5BrowserSupport": true
           },

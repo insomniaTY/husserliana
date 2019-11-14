@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { trigger, state, style, animate, transition, useAnimation } from '@angular/animations';
-
+import { NgwWowService } from 'ngx-wow';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -18,6 +18,14 @@ import { trigger, state, style, animate, transition, useAnimation } from '@angul
         width: '600px',
         height: '600px'
       })),
+      // trigger('heading', [
+      //   state('start', style({
+      //     opacity: '0.5'
+      //   })),
+      //   state('end', style({
+      //     opacity: '1'
+      //   }))
+      // ]),
       transition('initial <=> final', animate(700)),
       transition('initial => final', animate(700))
     ])
@@ -37,14 +45,19 @@ export class HomeComponent implements OnInit {
 // }
 
 changeImgState = 'initial';
+// headingState = 'start';
 
-  constructor( private translate: TranslateService ) {
+  constructor( private translate: TranslateService,
+               private wowService: NgwWowService) {
   }
-
-  ngAfter
 
   ngOnInit() {
     this.translate.use('ru');
+    this.wowService.init();
+  }
+
+  reset() {
+    this.wowService.init();
   }
 
 }

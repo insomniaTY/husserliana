@@ -20,7 +20,7 @@
 
 h1 {
     font-family: 'Karla', sans-serif;
-    /* font-size: 20px bolt; */
+    font-size: 20px bolt;
 }
 
 @media  (min-width:1200px) {
@@ -31,18 +31,22 @@ h1 {
 
 .rounded-circle {
   width: 800px;
+  padding: 15px;
 }
 
 .routes-bloc {
-  margin: px;
+  display: flex;
+  align-items: flex-start;
+  width: 1000px;
+
 }
 
 .row {
-  margin: 20px;
+  margin: 50px;
 }
 
-.col-md-2 {
-  margin: 10px;
+.col-xs-2 {
+  margin: 45px;
 }
 
 .display-3 {
@@ -50,8 +54,28 @@ h1 {
   font-size: 30px;
 }
 
+.icon {
+  width: 50px;
+}
+
+.col-md-2 {
+
+}
+
+.space {
+  width: 150px;
+  height: 170px;
+  padding: 110px;
+}
+
 @media (max-width: 800px) and (max-width: 1200px) {
   .rounded-circle {
     width: 400px;
+  }
+}
+
+@media (max-width: 50px) and (min-width: 50px) {
+  .routes-bloc {
+    width: 100px;
   }
 }
