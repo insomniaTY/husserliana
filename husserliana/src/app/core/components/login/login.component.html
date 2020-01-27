@@ -1,52 +1,19 @@
-<div class="login-container container">
-  <div class="row">
-    <div class="login-form-1 col-md-6 col-md-offset-3">
-      <h1 *ngIf="authFirebaseService && authFirebaseService.userData | async">
-        Hello {{(authFirebaseService.userData | async) ?.email}}</h1>
-      <div *ngIf="!(authFirebaseService.userData | async)">
-        <div class="form-group">
-          <label for="email">Email address:</label>
-          <input type="text" class="form-control" [(ngModel)]="email" placeholder="Your Email *"  value="">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" [(ngModel)]="password" id="pwd" placeholder="Your Password *"  value="">
-        </div>
-        <button (click)="signUp()" class="btn btn-default">Sign Up</button>
-        <button (click)="signIn()" class="btn btn-default" style="margin-left: 5px">Login</button>
-      </div>
-      <button (click)="signOut()" class="btn btn-primary" *ngIf="authFirebaseService.userData | async">Logout</button>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+
+    <div class="fadeIn first">
+      <img src="../../../../assets/signup-bg.jpg" id="icon" alt="User Icon" />
     </div>
+
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+
   </div>
-</div>
-
-
-<div class="container">
-    <div class="row">
-		<div class="col-md-4 col-md-offset-4">
-    		<div class="panel panel-default">
-			  	<div class="panel-heading">
-			    	<h3 class="panel-title">Please sign in</h3>
-			 	</div>
-			  	<div class="panel-body">
-			    	<form accept-charset="UTF-8" role="form">
-                    <fieldset>
-			    	  	<div class="form-group">
-			    		    <input class="form-control" placeholder="E-mail" name="email" type="text">
-			    		</div>
-			    		<div class="form-group">
-			    			<input class="form-control" placeholder="Password" name="password" type="password" value="">
-			    		</div>
-			    		<div class="checkbox">
-			    	    	<label>
-			    	    		<input name="remember" type="checkbox" value="Remember Me"> Remember Me
-			    	    	</label>
-			    	    </div>
-			    		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
-			    	</fieldset>
-			      	</form>
-			    </div>
-			</div>
-		</div>
-	</div>
 </div>
