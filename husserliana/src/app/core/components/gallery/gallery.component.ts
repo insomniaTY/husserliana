@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-gallery',
@@ -7,16 +7,12 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-
-  formTemplate = new FormGroup({
-    caption: new FormControl(''),
-    category: new FormControl(''),
-    imageUrl: new FormControl('')
-  });
+  elem: any = event;
 
   constructor() { }
 
   ngOnInit() {
+    fromEvent(document.images, 'screenX')
+      .subscribe(e => console.log(e));
   }
-
 }

@@ -1,3 +1,12 @@
+export interface Credentials {
+  password: string;
+  username: string;
+}
+
+export interface User {
+  name: string;
+}
+
 export interface Book {
   id: string;
   volumeInfo: {
@@ -12,6 +21,6 @@ export interface Book {
     imageLinks: {
       thumbnail: string;
       smallThumbnail: string;
-    }
+    };
   };
 }

@@ -15,9 +15,9 @@ import { LoginComponent } from '../../core/components/login/login.component';
 
 
 const routes: Routes = [
-  // {path: '', component: LoginComponent, children: [
-  //   {path: '', redirectTo: 'app-login', pathMatch: 'full'}
-  // ]},
+  { path: 'login', component: LoginComponent, children: [
+    {path: '', redirectTo: 'app-home', pathMatch: 'full'}
+  ]},
   {path: '', component: HomeComponent},
   { path: '', component: HomeComponent},
   { path: 'bio', component: BioComponent, children: [

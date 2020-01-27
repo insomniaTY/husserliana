@@ -18,14 +18,6 @@ import { NgwWowService } from 'ngx-wow';
         width: '600px',
         height: '600px'
       })),
-      // trigger('heading', [
-      //   state('start', style({
-      //     opacity: '0.5'
-      //   })),
-      //   state('end', style({
-      //     opacity: '1'
-      //   }))
-      // ]),
       transition('initial <=> final', animate(700)),
       transition('initial => final', animate(700))
     ])
@@ -34,18 +26,7 @@ import { NgwWowService } from 'ngx-wow';
 
 export class HomeComponent implements OnInit {
 
-// clickedDivState = 'start';
-// multiState = 'start';
-
-// changeDivState() {
-//   this.clickedDivState = 'end';
-//   setTimeout(() => {
-//     this.clickedDivState = 'start';
-//   }, 3000);
-// }
-
 changeImgState = 'initial';
-// headingState = 'start';
 
   constructor( private translate: TranslateService,
                private wowService: NgwWowService) {

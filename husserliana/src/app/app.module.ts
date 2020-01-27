@@ -14,6 +14,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './core/components/home/home.component';
@@ -26,7 +27,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { LoginComponent } from './core/components/login/login.component';
 
 import { GoogleBookService } from './shared/google-book.service';
-import { AuthKeyInterceptor } from '../app/shared/springer-token.interceptor';
+import { GoogleBookInterceptor } from './shared/googlebook-token.interceptor';
 import { AuthFirebaseService } from './shared/auth-firebase.service';
 import { environment } from 'src/environments/environment';
 
@@ -63,13 +64,16 @@ export function HttpLoaderFactory(http: HttpClient) {
   NgwWowModule,
   AngularFireModule.initializeApp(environment.firebase),
   AngularFireAuthModule,
-  AngularFirestoreModule
+  AngularFirestoreModule,
+  ChartsModule
   ],
   exports: [],
   providers: [
-    { provide: GoogleBookService, useClass: GoogleBookService },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthKeyInterceptor, multi: true },
-    {provide: AuthFirebaseService, useClass: AuthFirebaseService}
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GoogleBookInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

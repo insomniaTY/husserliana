@@ -1,14 +1,26 @@
-.rounded {
-    background-color: #E9F7EF;
+.chart-wrapper {
+  margin-left: -50px;
+  padding: 60px;
+  width: 1300px;
 }
 
-.red {
-  background: red;
-  font-weight: bold;
-  color: #fff;
+.heading-3 {
+  text-align: center;
+  padding: 50px;
 }
 
-.blue {
-  background: blue;
-  font-size: 1.5rem;
+.jumbotron {
+  color: black;
+}
+
+.display-4 {
+  text-align: center;
+}
+
+.lead {
+  text-align: center;
+}
+
+.text-description {
+  text-align: initial;
 }

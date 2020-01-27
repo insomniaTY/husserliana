@@ -37,16 +37,16 @@ h1 {
 .routes-bloc {
   display: flex;
   align-items: flex-start;
-  width: 1000px;
+  width: 900px;
 
 }
 
 .row {
-  margin: 50px;
+  margin: 40px;
 }
 
 .col-xs-2 {
-  margin: 45px;
+  margin: 25px;
 }
 
 .display-3 {
@@ -68,11 +68,11 @@ h1 {
   padding: 110px;
 }
 
-@media (max-width: 800px) and (max-width: 1200px) {
+/* @media (max-width: 800px) and (max-width: 1200px) {
   .rounded-circle {
     width: 400px;
   }
-}
+} */
 
 @media (max-width: 50px) and (min-width: 50px) {
   .routes-bloc {

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit   {
 
 
-  constructor(private translate: TranslateService) {
+  constructor(public translate: TranslateService) {
     translate.setDefaultLang('ru');
 
     translate.addLangs(['eng', 'de']);
