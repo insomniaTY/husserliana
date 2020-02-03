@@ -1,12 +1,14 @@
 import { Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { GoogleBookService } from '../../../shared/google-book.service';
+import { SpringerService } from '../../../shared/springer.service';
 import { Book } from '../../../shared/book';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { map } from 'rxjs/operators';
 
-import { Observable } from 'rxjs';
+import {fromEvent, Observable, pipe} from 'rxjs';
+
+
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
@@ -15,6 +17,9 @@ import { Observable } from 'rxjs';
 export class WorksComponent implements OnInit {
   document$: Observable<any>;
   manual: any;
+  books: Book[] = [];
+
+  r = [1, 3, 4, 5];
   lineChartData: ChartDataSets[] = [
     { data: [100, 42, 41, 40, 47, 45, 44, 40, 34, 26, 16], label: 'Husserl works' },
   ];
@@ -44,12 +49,20 @@ export class WorksComponent implements OnInit {
   lineChartLegend = true;
   lineChartPlugins = [];
   lineChartType = 'line';
- constructor(private googleBookService: GoogleBookService) {
+
+
+ constructor(private springerService: SpringerService) {
  }
 
  ngOnInit() {
-  this.document$ = this.googleBookService.getDocument('10.1007/BF01201962');
-  console.log(this.document$);
- }
+  this.document$ = this.springerService
+    .getDocument('10.1007/s11276-008-0131-4');
 
+  this.springerService
+    .getDocument('10.1007/s11276-008-0131-4')
+    .subscribe(response => {
+      console.log((response));
+    });
+ }
 }
+

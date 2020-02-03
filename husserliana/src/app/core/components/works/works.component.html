@@ -12,8 +12,9 @@
 </div>
 
 <div *ngIf="document$ | async as document">
-  <p>{{document | json}}</p>
+  <pre>{{ document | json }}</pre>
 </div>
+
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">

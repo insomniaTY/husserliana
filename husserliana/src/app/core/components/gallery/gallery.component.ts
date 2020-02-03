@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { fromEvent } from 'rxjs';
 
 @Component({
@@ -8,11 +8,12 @@ import { fromEvent } from 'rxjs';
 })
 export class GalleryComponent implements OnInit {
   elem: any = event;
+  image = HTMLImageElement;
 
   constructor() { }
 
   ngOnInit() {
-    fromEvent(document.images, 'screenX')
-      .subscribe(e => console.log(e));
+   fromEvent(document.images, 'click')
+     .subscribe(event => console.log(event));
   }
 }
