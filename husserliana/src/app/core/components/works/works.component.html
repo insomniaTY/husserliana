@@ -11,10 +11,13 @@
   </canvas>
 </div>
 
-<div *ngIf="document$ | async as document">
-  <pre>{{ document | json }}</pre>
-</div>
+<!--<div *ngIf="document$ | async as document">-->
+<!--  <pre>{{ document | json }}</pre>-->
+<!--</div>-->
 
+<div *ngFor="let document of document">
+  <p>{{document}}</p>
+</div>
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
