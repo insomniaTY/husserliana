@@ -1,14 +1,11 @@
 const express = require('express');
-const cors    = require('cors');
-const path    = require('path');
-const app     = express();
+const path = require('path');
+const app = express();
 
-app.use(cors());
+app.use(express.static(__dirname + '/dist/kek'));
 
-app.use(express.static(__dirname + 'dist/husserliana'));
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/dist/husserliana/index.html'));
+app.get('/*', function(req, res) {
+  res.send(path.join(__dirname + '/dist/kek/index.html'));
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 3000);
