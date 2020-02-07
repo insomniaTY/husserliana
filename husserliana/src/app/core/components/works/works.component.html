@@ -1,23 +1,21 @@
 <h2 class="heading-3">Работы Эдмунда Гуссерля</h2>
 <div class="chart-wrapper">
   <canvas baseChart
-      [datasets]="lineChartData"
-      [labels]="lineChartLabels"
-      [options]="lineChartOptions"
-      [colors]="lineChartColors"
-      [legend]="lineChartLegend"
-      [chartType]="lineChartType"
-      [plugins]="lineChartPlugins">
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+          (chartClick)="chartClicked($event)">
   </canvas>
 </div>
 
-<!--<div *ngIf="document$ | async as document">-->
-<!--  <pre>{{ document | json }}</pre>-->
-<!--</div>-->
-
-<div *ngFor="let document of document">
-  <p>{{document}}</p>
+<div *ngIf="document$ | async as document" class="container shadow-lg">
+  <p>{{ document.records[0].abstract | json }}</p>
 </div>
+
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">

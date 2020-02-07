@@ -1,5 +1,5 @@
 export interface Book {
-  result: {};
- records: {};
- facets: {};
+  result: string;
+ records: string;
+ facets: string;
 }
