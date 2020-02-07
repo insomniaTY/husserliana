@@ -1,24 +1,11 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
 
-const forceSSL = function() {
-  return function(req, res, next) {
-    if(req.headers['x-forwarder-proto'] !== 'https') {
-      return res.redirect(
-        ['https://', req.get('Host'), req.url].join('')
-      );
-    }
-    next();
-  }
-}
-
-
-app.use(express.static(__dirname + '/dist/husserliana/husserliana'));
+app.use(express.static(__dirname + '/dist/kek'));
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname, '/dist/husserliana/husserliana/index.html'));
+  res.send(path.join(__dirname + '/dist/kek/index.html'));
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 3000);
