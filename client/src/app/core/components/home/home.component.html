@@ -1,0 +1,51 @@
+<div class="jumbotron jumbotron-fluid wow zoomIn" data-wow-duration="3s" data-wow-offset="1" data-wow-delay=".3s">
+  <div class="container">
+    <h1
+    translate class="display-4">
+      {{ 'Title' | translate }}
+    </h1>
+  </div>
+</div>
+
+
+<div class="space"></div>
+
+  <div class="row col-xs-2 justify-content-center wow slideInLeft" data-wow-duration="3s" data-wow-delay=".3s">
+      <img (click)="changeImgState = changeImgState === 'initial' ? 'final' : 'initial'"
+      [@flip]="changeImgState"
+      class="rounded-circle"
+      src="../../../../assets/husserl.jpg" alt="husserl">
+  </div>
+
+
+
+  <div class="routes-bloc wow fadeInRight" data-wow-duration="2s" data-wow-delay=".3s" >
+        <div class="col-md-2"></div>
+        <div class="col-xs-2">
+            <div class="icon">
+                <img src="../../../../assets/icons8-create-64.png" alt="icon">
+            </div>
+            <a class="display-3" href="/bio">Вы можете познакомиться с биографией Гуссерля</a>
+        </div>
+        <div class="col-xs-2">
+            <div class="icon">
+                <img src="../../../../assets/icons8-book-64.png" alt="icon">
+            </div>
+            <a class="display-3" href="/bibliography">Вы можете познакомиться с его работами Гуссерля</a>
+        </div>
+        <div class="col-xs-2">
+            <div class="icon">
+                <img src="../../../../assets/icons8-scroll-64.png" alt="icon">
+            </div>
+            <a class="display-3" href="/bibliography">Вы можете познакомиться с библиографией его изданий и работ</a>
+        </div>
+        <div class="col-xs-2">
+            <div class="icon">
+                <img src="../../../../assets/icons8-compact-camera-64.png" alt="icon">
+            </div>
+            <a class="display-3" href="/gallery">Вы можете познакомиться с фотогалереей Гуссерля</a>
+        </div>
+      </div>
+
+
+

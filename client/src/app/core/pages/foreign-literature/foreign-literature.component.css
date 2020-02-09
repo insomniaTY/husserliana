@@ -1,0 +1,7 @@
+.table {
+  display: flex;
+  width: 1000px;
+  margin: 70px;
+  margin-left: 130px;
+  height:100%;
+}

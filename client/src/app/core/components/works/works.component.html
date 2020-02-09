@@ -1,0 +1,318 @@
+<h2 class="heading-3">Работы Эдмунда Гуссерля</h2>
+<div class="chart-wrapper">
+  <canvas baseChart
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [options]="lineChartOptions"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins"
+          (chartClick)="chartClicked($event)">
+  </canvas>
+</div>
+
+<div *ngIf="document$ | async as document" class="container shadow-lg">
+  <p>{{ document.records[0].abstract | json }}</p>
+</div>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Husserl, Edmund 1859-1938</h1>
+    <p class="lead">Хронология текстов</p>
+    <strong class="h4">1881-1883: Husserl at University of Vienna</strong>
+    <p class="text-description lead h-100">
+      "Beiträge zur Theorie der Variationsrechnung" (Contributions towards a theory of variation calculus.) Wien.
+Ph.D. dissertation at the University of Vienna under Leo Königsberger.
+    </p>
+    <strong class="h4">1886/87, Winter - 1901: Husserl at University of Halle</strong>
+    <p class="text-description lead">
+      Studien zur Arithmetik und Geometrie. Texte aus dem Nachlass (1886-1901). [Studies on arithmetic and geometry. Texts from the estate (Louvain Archives)] Edited by Ingeborg Strohmeyer. The Hague, Netherlands: Martinus Nijhoff, 1983.
+    </p>
+    <p class="text-description lead">
+      "Lebenslauf". In Osborn, A.D. The Philosophy of Edmund Husserl: in its Development from his Mathematical Interests to his First Conception of Phenomenology in Logical Investigations. New York, NY: International press, 1934, 110.
+    </p>
+   <p class="text-description lead">
+    Über den Begriff der Zahl: psychologische Analysen. [Habilitationsschrift.] Halle a. S.: Heynemann'sche Buchdruckerei (F. Beyer), 1987.
+   </p>
+   <p class="text-description lead">
+    "Die Ziele und Aufgaben der Metaphysik" (Goals and tasks of metaphysics.)
+    Inaugural lecture as Privatdozent at Halle.
+   </p>
+   <p class="text-description lead">
+    Philosophie der Arithmetik, Erster Band. Psychologische und logische Untersuchungen. Halle-Saale: C.E. M. Pfeffer (Robert Stricker), 1891.
+   </p>
+   <p class="text-description lead">
+    Philosophie der Arithmetik. Mit ergänzenden Texten (1890-1901). [Philosophy of arithmetic. With complementary texts. 1890-1901.] Edited by Lothar Eley. The Hague, Netherlands: Martinus Nijhoff, 1970.
+   </p>
+   <p class="text-description lead">
+    "Selbstanzeige." Philosophie der Arithmetik. Halle a. S., C.E.M. Pfeffer (R. Stricker), 1891. In Vierteljahrschrift für wissenschafliche Philosophie. Leipzig. 15 (1891): 360-61.
+    [Notice. Philosophy of Arithmetic.]
+   </p>
+   <p class="text-description lead">
+    "Letter to Frege: July 18, 1898." Translated by J. N. Mohanty. In "The Frege-Husserl Correspondence." Southwestern Journal of Philosophy. Vol. V (1974), 88-87.
+   </p>
+   <p class="text-description lead">
+    "Der Folgerungskalkuül und die Inhaltslogik." Vierteljahrschrift für wissenschafliche Philosophie. Leipzig. 15 (1891): 168-89.
+   </p>
+   <p class="text-description lead">
+    "Der Folgerungskalkül und die Inhaltslogik. Nachträge zur gleichnamigen Abhandlung S. 168 ff. dieses Bandes." Vierteljahrschrift für wissenschafliche Philosophie. Leipzig. 15 (1891): 351-56.
+   </p>
+   <p class="text-description lead">
+    Besprechung: Schröder, Ernst, "Vorlesungen über die Algebra der Logik. (Exakte Logik). I Band. Leipzig, B. G. Teubner. 1890. In Göttingische gelehrte Anzeigen. Göttingen. (1891): 243-78.
+   </p>
+   <p class="text-description lead">
+    "A Voigt's 'elementare Logik' und meine Darlegungen zur Logik des logischen Calculs." Vierteljahrschrift für wissenschafliche Philosophie. Leipzig. 17 (1893): 111-20.
+   </p>
+   <p class="text-description lead">
+    "Antwort auf die vorstehende 'Erwiderung' des Herrn Voigt." Vierteljahrschrift für wissenschafliche Philosophie. Leipzig. 17 (1893): 508-11.
+   </p>
+   <strong>1894</strong>
+   <p class="text-description lead">
+    "Psychologische Studien zur elementaren Logik." Philosophische Monatschefte. Berlin. 30. (1894): 159-91.
+   </p>
+   <strong>1897</strong>
+   <p class="text-description lead">
+    "Bericht über deutsche Schriften zur Logik as dem Jahre 1894." Archiv für systematische Philosophie. Berlin. 3 (1897): 216-44.
+   </p>
+   <strong>1898-1925</strong>
+   <p class="text-description lead">
+    Phäntasie, Bildbewusstsein, Erinnerung. Zur Phänomenologie der anschaulichen Vergegenwartigungen. Texte aus dem Nachlass (1898-1925). [Imagination, image consciousness, memory: on the phenomenology of intuitive presentiations. Texts from the estate (Louvain archives)] Edited by Eduard Marbach. The Hague, Netherlands: Martinus Nijhoff, 1980.
+   </p>
+   <strong>1900, May 2</strong>
+   <p class="text-description lead">
+    "Über psychologische Begründung der Logik. Zeitschrift für Philosphische Forschung. Postfach, West Germany: Meisenheim/Glan. 13 (1959): 346-48.
+   </p>
+   <p class="text-description lead">
+    Logische Untersuchungen. Erster Teil: Prolegomena zur reinen Logik. Halle a.d.S.: Max Niemeyer. 1900.
+   </p>
+   <p class="text-description lead">
+    "Selbstanzeige." Logische Untersuchungen. Erster Teil: Prolegomena zur reinen Logik. Halle a.S. In Vierteljahrschrift für wissenschafliche Philosophie. Leipzig. 24 (1900): 511-12.
+   </p>
+   <strong>1901</strong>
+   <p class="text-description lead">
+    Logische Untersuchungen. Zweiter Teil: Untersuchungen zur Phänomenologie und Theorie der Erkenntnis. Halle a.S.: Max Niemeyer, 1901.
+   </p>
+   <p class="text-description lead">
+    "Selbstanzeige." Logische Untersuchungen. Zweiter Teil: Untersuchungen zur Phänomenologie und Theorie der Erkenntnis. Halle a.S.: Max Niemeyer, 1901. In Vierteljahrschrift für wissenschafliche Philosophie und Soziologie. Leipzig. 25 (1901): 260-63.
+   </p>
+   <strong class="h4">1901, September - 1916: University of Göttingen</strong>
+   <br>
+   <strong>1903</strong>
+   <p class="text-description lead">
+    Literaturebericht. Melchior Palàgyi. Der Streit der Psychologisten und Formalisten in der modernen Logik. Leipzig. W. Engelmann, 1902. In Zeitschrift für Psychologie und Physiologie der Sinnesorgane. Leipzig. 31: 287-94.
+   </p>
+   <strong>1903-4</strong>
+   <p class="text-description lead">
+    "Bericht über deutsche Schriften zur Logik in den Jahren 1895-1899." In Archiv für systematische Philosophie. Berlin. 9 (1903): 113-32, 237-59, 393-408, 523-43; & 10: (1904): 101-25.
+   </p>
+   <strong>1905-20</strong>
+   <p class="text-description lead">
+    Zur Phänomenologie der Intersubjektivität. Texte aus dem Nachlass. Erster Teil. 1905-1920. [On the phenomenology of intersubjectivity. Texts from the estate (Louvain archives). Part 1. 1905-20.] Edited by Iso Kern. The Hague, Netherlands: Martinus Nijhoff, 1973.
+   </p>
+   <strong>1906</strong>
+   <p class="text-description lead">
+    "'Faculté', 'Fait', 'Fantaisie'." Bemerkungen in A. Lalande, Vocabulaire philosophique, fascicule no. 9, F et G. In Bulletin de la Société francaise de philosophie. Paris. 6 (1906): 293, 296, 299.
+   </p>
+   <strong>1906-07</strong>
+   <p class="text-description lead">
+    Einleitung in die Logik und Erkenntnistheorie. Vorlesungen 1906/07. [Introduction to logic and the theory of knowledge: lectures 1906/07]. Edited by Ullrich Melle. The Hague, Netherlands: Martinus Nijhoff, 1985.
+   </p>
+   <strong>1906-08</strong>
+   <p class="text-description lead">
+    "Persönliche Aufzeichnungen." Edited by Walter Biemel. In Philosophy and Phenomenological Research 16, no. 3. (March 1956): 293-302.
+   </p>
+   <strong>1907</strong>
+   <p class="text-description lead">
+    Die Idee der Phänomenologie. Fünf Vorlesungen. [The idea of phenomenology. Five lectures. ] Edited by Walter Biemel. The Hague, Netherlands: Martinus Nijhoff, 1973.
+   </p>
+   <p class="text-description lead">
+    Ding und Raum. Vorlesungen 1907. [Thing and space. Lectures 1907.] Edited by Ulrich Claesges. The Hague, Netherlands: Martinus Nijhoff, 1973.
+   </p>
+   <strong>1908-14</strong>
+   <p class="text-description lead">
+    Vorlesungen über Ethik und Wertlehre. 1908-1914. [Lectures on ethics and value theory, 1908-1914.] Edited by Ullrich Melle. The Hague, Netherlands: Kluwer Academic Publishers, 1988.
+   </p>
+   <strong>1908</strong>
+   <p class="text-description lead">
+    Vorlesungen über Bedeutungslehre. Sommersemester 1908. [Lectures on the doctrine of meaning: summer semester 1908.] Edited by Ursula Panzer. The Hague, Netherlands: Martinus Nijhoff, 1987.
+   </p>
+   <strong>1909</strong>
+   <p class="text-description lead">
+    "'Individu' and 'Intention'." Bemerkungen in A. Lalande, Vocabulaire philosophique, fascicule no. 12. In the Bulletin de la Société francaise de philosophie. Paris. 9 (1909): 235, 263.
+   </p>
+   <strong>1910</strong>
+   <p class="text-description lead">
+    Referat. [Review.] "Anton Marty, Untersuchungen zur Grundlegung der allgemeinen Grammatik und Sprachphilosophie." I Bd. Halle, Max Niemeyer, 1908. Deutsche Literatur-zeitung. Berlin. 31 (1910): 1106-10.
+   </p>
+   <strong>1910-11</strong>
+   <p class="text-description lead">
+    "Philosophie als strenge Wissenschaft." Logos 1. Tübingen. (1910-11): 289-341.
+   </p>
+   <p class="text-description lead">
+    Grundprobleme der Phänomenologie 1910/11. [Basic problems of phenomenology 1910/11.] Herausgegeben von Iso Kern. Hamburg: F. Meiner Verlag, 1992.
+   </p>
+   <strong>1911-17</strong>
+   <p class="text-description lead">
+    Logische Untersuchungen. Ergänzungsband. Entwürfe zur Umarbeitung der VI. Untersuchung. Texte aus dem Nachlaß (1911-1917). [Logical investigations. Complementary volume. Draft plan for the sixth investigation. Texts from the estate (1911-1917).] Edited by Felix Belussi. The Hague, Netherlands: Kluwer Academic Publishers.
+   </p>
+   <strong>1911-21</strong>
+   <p class="text-description lead">
+    Aufsätze und Vorträge. 1911-1921. Mit ergänzenden Texten. (Essays and lectures. 1911-22. With complementary texts.) Edited by Thomas Nenon and Hans Rainer Sepp. The Hague, Netherlands: Martinus Nijhoff, 1986.
+   </p>
+   <strong>1911, June - July</strong>
+   <p class="text-description lead">
+    "Correspondencia entre Dilthey y Husserl." Revista de filosofia de la universidad de Costa Rica. San José de Costa Rica. 1 (1957): 101-24.
+   </p>
+   <strong>1913-30</strong>
+   <p class="text-description lead">
+    Jahrbuch für Philosophie und phänomenologische Forschung. [Yearbook for philosophy and phenomenological research.] In Gemeinschaft mit M. Geiger (München), A. Pfänder (München), A. Reinach (Göttingen), M. Scheler (Berlin). Herausgegeben von Edmund Husserl. Halle a.d.S.: Max Niemeyer, 1913-1930. [11 volumes]
+   </p>
+   <strong>1911, June - July</strong>
+   <p class="text-description lead">
+    "The Dilthey-Husserl Correspondence." Translated by Jeffner Marie Allen and edited by Walter Biemel. McCormick, Peter and Elliston, Frederick A. eds. Husserl: Shorter Works. Notre Dame, IN: University of Notre Dame Press, 1981, 203-9.
+   </p>
+   <strong>1913-30</strong>
+   <p class="text-description lead">
+    Jahrbuch für Philosophie und phänomenologische Forschung. [Yearbook for philosophy and phenomenological research.] In Gemeinschaft mit M. Geiger (München), A. Pfänder (München), A. Reinach (Göttingen), M. Scheler (Berlin). Herausgegeben von Edmund Husserl. Halle a.d.S.: Max Niemeyer, 1913-1930. [11 volumes]
+   </p>
+   <strong>1913</strong>
+   <p class="text-description lead">
+    Ideen zu einer reinen Phänomenologie und phänomenologischen Philosophie. In Jahrbuch für Philosophie und phänomenologische Forschung, 1 Halle a.d.S. (1913), 1-323.
+   </p>
+   <p class="text-description lead">
+    Logische Untersuchungen. Erster Band: Prolegomena zur reinen Logik. Zweiter Band: Untersuchungen zur Phänomenologie und Theorie der Erkenntniss, I. Teil. Zweite, umgearbeitete Auflage Halle a.d.S.: Max Niemeyer, 1913.
+   </p>
+   <strong>1913, Summer</strong>
+   <p class="text-description lead">
+    Logische Untersuchungen. Ergänzungsband. Erster Teil. Entwürfe zur Umarbeitung der VI. Untersuchung und zur Vorrede für die Neuauflage der Logischen Untersuchungen (Sommer 1913). [Logical investigations. Supplementary volume. Draft plan for the revision of the 6th Logical Investigation and the foreword of the Logical Investigations (Summer 1913).] Edited by Ulrich Melle. The Hague, Netherlands: Kluwer Academic Publishers, 2002.
+   </p>
+   <strong>1913r</strong>
+   <p class="text-description lead">
+    "Entwurf einer 'Vorrede' zu den Logischen Untersuchungen." Herausgegeben von Eugen Fink. Tijdschrift voor Filosophie. Leuven. 1 (1939): 106-33; 319-39.
+   </p>
+   <p class="text-description lead">
+    "Vorwort." In Jahrbuch für Philosophie und phänomenologische Forschung, 1. Halle a.d.S. (1913), v-vi.
+   </p>
+   <strong>1914</strong>
+   <p class="text-description lead">
+    Beitrag zur Diskussion zum Vortrag von [Heinrich] Maier: Philosophie und Psychologie. [Contribution to discussion of lecture from (Heinrich) Maier: philosophy and psychology.] In Bericht über den VI. Kongress für experiementelle Psychologie vom 15. bix 18. April 1914, im Auftrage des Vorstandes herausgegeben von Prof. Dr. F. Schumann, II Teil. Leipzig: J.A. Barth, 1914, 144-145.
+   </p>
+   <strong>1915</strong>
+   <p class="text-description lead">
+    "Brief an Hugo Münsterberg." In Münsterberg, Hugo. The Peace and America. New York: Appleton, 1915, 222-24.
+   </p>
+   <strong class="h4">1916, April 1 - 1928: University of Freiburg (successor of H. Rickert)</strong>
+   <br>
+   <strong>1916</strong>
+   <p class="text-description lead">
+    "Vorwort." In Jahrbuch für Philosophie und phänomenologische Forschung, 2. Halle a.d.S. (1916), v-vi.
+   </p>
+   <strong>1917-18</strong>
+   <p class="text-description lead">
+    Logik und allgemeine Wissenschaftstheorie. Vorlesungen 1917/18. Mit ergänzenden Texten aus der ersten Fassung 1910/11. [Logic and general theory of science. Lectures 1917/18, with complementary texts and extra texts from the first version 1910/11.] Edited by Ursula Panzer. The Hague, Netherlands: Kluwer Academic Publishers, 1995.
+   </p>
+   <strong>1917, May 3</strong>
+   <p class="text-description lead">
+    "Die reine Phänomenologie ihr Forschungsgebiet und ihre Methode." [Pure phenomenology, its method and its field of investigation.]
+    Inaugural lecture as Ordinarius Professor at the University of Freiburg.
+   </p>
+   <p class="text-description lead">
+    "Adolf Reinach." Frankfurter Zeitung vom 6. Dezember 1917.
+   </p>
+   <strong>1918-1926</strong>
+   <p class="text-description lead">
+    Analysen zur passiven Synthesis. Aus Vorlesungs- und Forschungsmanuskripten, 1918-1926. (Analyses of passive synthesis. From lectures and research manuscripts.) Edited by Margot Fleischer. The Hague, Netherlands: Martinus Nijhoff, 1966.
+   </p>
+   <strong>1919</strong>
+   <p class="text-description lead">
+    "Erinnerungen an Franz Brentano." In Oskar Kraus, Franz Brentano. Zur Kenntnis seines Lebens und seiner Lehre, München. C.H. Beck, 1919, Anhang II, 153-67.
+   </p>
+   <strong>1919, September 4</strong>
+   <p class="text-description lead">
+    "Ein Brief Edmund Husserls von 1919." (an Arnold Metzger.) Philosophisches Jahrbuch der Görres-Gesellschaft, München. Vol. 62, no. 1 (April 1953): 195-200.
+   </p>
+   <strong>1921-28</strong>
+   <p class="text-description lead">
+    Zur Phänomenologie der Intersubjektivität. Texte aus dem Nachlass. Zweiter Teil. 1921-28. [On the phenomenology of intersubjectivity. Texts from the estate (Louvain archives). Second part. 1921-28.] Edited by Iso Kern. The Hague, Netherlands: Martinus Nijhoff, 1973
+   </p>
+   <strong>1921</strong>
+   <p class="text-description lead">
+    Logische Untersuchungen. Zweiter Band: Elemente einer phänomenologischen Aufklärung der Erkenntnis. II. Teil. Zweite, teilweise umgearbeitete Auflage. Halle a.d.S.: Max Niemeyer, 1921.
+   </p>
+   <strong>1921</strong>
+   <p class="text-description lead">
+    Logische Untersuchungen. Zweiter Band: Elemente einer phänomenologischen Aufklärung der Erkenntnis. II. Teil. Zweite, teilweise umgearbeitete Auflage. Halle a.d.S.: Max Niemeyer, 1921.
+   </p>
+   <p class="text-description lead">
+    "Vorwort." In Jahrbuch für Philosophie und phänomenologische Forschung, 4 Halle a.d.S. (1921), v.
+   </p>
+   <strong>1922-37</strong>
+   <p class="text-description lead">
+    Aufsätze und Vorträge. 1922-1937. (Essays and lectures.) Edited by T. Nenon H.R. Sepp. The Hague, Netherlands: Kluwer Academic Publishers, 1988.
+   </p>
+   <strong>1922</strong>
+   <p class="text-description lead">
+    Logische Untersuchungen. Erster Band: Prolegomena zur reinen Logik. Zweiter Bank: Untersuchungen zur Phänomenologie und Theorie der Erkenntnis, I. Teil. Elemente einer phänomenologischen Aufklärung der Erkenntnis, II. Teil. Dritte, unveränderte Auflage. Halle a.d.S.: Max Niemeyer, 1922.
+   </p>
+   <p class="text-description lead">
+    Ideen zu einer reinen Phänomenologie und phänomenologischen Philosophie. Erstes Buch: Allgemeine Einführung in die reine Phänomenologie. Zweiter unveränderter Abdruck. Sonderdruck aus: Jahrbuch für Philosophie und phänomenologische Forschung, 1. Halle a.d.S.: Max Niemeyer, 1922.
+   </p>
+   <strong>1922, June</strong>
+   <p class="text-description lead">
+    "Phänomenologische Methode und Phänomenologische Philosophie."
+    Public Lectures at the University College in London.
+   </p>
+   <strong>1923-4</strong>
+   <p class="text-description lead">
+    Erste Philosophie (1923/4). Erste Teil: Kritische Ideengeschichte. [First philosophy (1923-24). First part: the critical history of ideas.] Edited by Rudolf Boehm. The Hague, Netherlands: Martinus Nijhoff, 1956.
+   </p>
+   <p class="text-description lead">
+    Erste Philosophie (1923/4). Zweiter Teil: Theorie der phänomenologischen Reduktion. [First philosophy (1923-24). Second part: theory of phenomenological reduction.] Edited by Rudolf Boehm. The Hague, Netherlands: Martinus Nijhoff, 1959.
+   </p>
+   <strong>1923</strong>
+   <p class="text-description lead">
+    "Die Idee einer philosophischen Kultur: Ihr erstes Aufkeimen in der grieschen Philosophie." [The idea of a philosophical culture: its first flowerings in Greek philosophy.] In Japanisch-deutsche Zeitschrift für Wissenschaft und Technik. Lübeck. 1 (1923): 45-51.
+   </p>
+   <p class="text-description lead">
+    "Erneuerung, Ihr Problem and ihre Methode." In The Kaizo- La rekonstuyo. Tokyo. (1923) 3: 84-92.
+   </p>
+   <strong>1924</strong>
+   <p class="text-description lead">
+    "Die Methode der Wesensforschung" [The method of eidetic inquiry.] In The Kaizo-La rekonstuyo. Tokyo. (1924) 2: 107-16.
+   </p>
+   <p class="text-description lead">
+    "Erneuerung als individualethisches Problem" [Renewal as an individual ethical problem.] In The Kaizo-La rekonstuyo. Tokyo. Special Edition (April): 2-31.
+   </p>
+   <strong>1925</strong>
+   <p class="text-description lead">
+    Meditation upon Karl Eugen Neumann's translation "Über die Reden Gotamo Buddhos" [On Buddha's teaching.] Der Piperbote für Kunst und Literatur 2 (1925): 18f.
+   </p>
+   <p class="text-description lead">
+    Phänomenologische Psychologie. Vorlesungen Sommersemester. 1925. [Phenomenological psychology. Lectures from the summer semester. 1925.] Edited by Walter Biemel. The Hague, Netherlands: Martinus Nijhoff, 1968.
+   </p>
+   <strong>1927-31</strong>
+   <p class="text-description lead">
+    Psychological and Transcendental Phenomenology and the Confrontation with Heidegger (1927 1931): The Encyclopaedia Britannica Article, the Amsterdam Lectures, 'Phenomenology and Anthropology', and Husserl's Marginal Notes in Being and Time and Kant and the Problem of Metaphysics. Translated and edited by Thomas Sheehan and Richard E. Palmer. Collected Works, Volume 6. Dordrecht, Netherlands: Kluwer Academic Publishers, 1997.
+   </p>
+   <strong>1927</strong>
+   <p class="text-description lead">
+    "Die Phänomenologie und Rudolf Eucken." Die Tatwelt (Jena) 3 (1927): 10-11.
+   </p>
+   <strong>1927, November 19</strong>
+   <p class="text-description lead">
+    "Drei unveröffentlichte Briefe von Husserl an Ingarden." [Three unpublished letters of Husserl to Ingarden.] Zeitschrift für Philosophische Forschung. Postfach, West Germany: Meisenheim/Glan. 13 (1959): 349-51.
+   </p>
+   <p class="text-description lead">
+    Phenomenology." Translated by C. V. Salmon. The Encyclopaedia Britannica, 14th ed. vol. 17 (1929), 699-702.
+   </p>
+   <strong class="h4">1928, March 31--Emeritus professor</strong>
+   <br>
+   <strong>1928, April</strong>
+   <p class="text-description lead">
+    "Phänomenologie und Psychologie. Transzendentale Phänomenologie." [Phenomenology and psychology. Transcendental phenomenology.]
+    Public Lectures in Amsterdam.
+   </p>
+  </div>
+</div>

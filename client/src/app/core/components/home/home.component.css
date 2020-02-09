@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+  cursor: pointer;
+}
+
+.jumbotron-fluid {
+  display: flex;
+  background-image: url('https://images.unsplash.com/photo-1554388648-dc1f174f09f3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60');
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 1350px;
+  margin: 40px;
+  border-radius: 5px;
+}
+
+.display-4 {
+    color: white;
+}
+
+h1 {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px bolt;
+}
+
+@media  (min-width:1200px) {
+  .jumbotron-fluid {
+    height: 600px;
+  }
+}
+
+.rounded-circle {
+  width: 800px;
+  padding: 15px;
+}
+
+.routes-bloc {
+  display: flex;
+  align-items: flex-start;
+  width: 900px;
+
+}
+
+.row {
+  margin: 40px;
+}
+
+.col-xs-2 {
+  margin: 25px;
+}
+
+.display-3 {
+  color: black;
+  font-size: 30px;
+}
+
+.icon {
+  width: 50px;
+}
+
+.col-md-2 {
+
+}
+
+.space {
+  width: 150px;
+  height: 170px;
+  padding: 110px;
+}
+
+/* @media (max-width: 800px) and (max-width: 1200px) {
+  .rounded-circle {
+    width: 400px;
+  }
+} */
+
+@media (max-width: 50px) and (min-width: 50px) {
+  .routes-bloc {
+    width: 100px;
+  }
+}
