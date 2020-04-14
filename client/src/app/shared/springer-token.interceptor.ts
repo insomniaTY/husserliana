@@ -7,7 +7,7 @@ import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/c
 export class SpringerInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const withKeyRequest = req.clone({
-      params: req.params.set('api_key', '2956a6999c184b87462887c5d518b26c')
+      params: req.params.set('api_key', 'AIzaSyBK5y9D8MF_6z3UASi5BLUP49pC-pltedU')
     });
 
     return next.handle(withKeyRequest);

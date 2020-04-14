@@ -1,10 +1,8 @@
-import {Component, OnInit, Input, ViewChild, ElementRef, AfterViewInit, Renderer2} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SpringerService } from '../../../shared/springer.service';
-import { Book } from '../../../shared/book';
 import {ChartDataSets, ChartElementsOptions, ChartOptions} from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-import { map } from 'rxjs/operators';
 
 import {fromEvent, Observable, pipe} from 'rxjs';
 
@@ -17,15 +15,14 @@ import {fromEvent, Observable, pipe} from 'rxjs';
 export class WorksComponent implements OnInit {
   document$: Observable<any>;
   manual: any;
-  books = ['A', 'B', 'C'];
-
 
   r = [1, 3, 4, 5];
   lineChartData: ChartDataSets[] = [
     { data: [100, 42, 41, 40, 47, 45, 44, 40, 34, 26, 16], label: 'Husserl works' },
   ];
 
- private lineChartLabels: Label[] = ['Philosophie der Arithmetik',
+ public lineChartLabels: Label[] = [
+   'Philosophie der Arithmetik',
   'Untersuchungen zur Phänomenologie',
   'Psychologische Studien zur elementaren Logik',
   'Prolegomena zur reinen Logik',
@@ -56,34 +53,31 @@ export class WorksComponent implements OnInit {
 
  ngOnInit() {
    this.document$ = this.springerService
-     .getDocument('978-1-4020-3574-6');
+     .getDocument('lxftCAAAQBAJ');
 
    this.springerService
-     .getDocument('978-1-4020-3574-6')
+     .getDocument('lxftCAAAQBAJ')
      .subscribe(response => {
        console.log((response));
      });
   }
 
   public chartClicked({ event, active}: { event: MouseEvent, active: {lineChartLabels}[] }): void {
-   this.springerService.getDocument('978-1-4020-3574-6')
-     .subscribe(response => {
-       console.log(response, this.lineChartLabels.length, active, event);
-     });
-  }
-
-//   chartClick(eventObj) {
-//     if (eventObj.active.length) { const activeElem = eventObj.active[0];
-//       if (activeElem){
-//      console.log(activeElem._index)
-// }}}
+    const idx = active[0].xScale._ticks[3];
+    this.springerService.getDocument('10.1007/978-94-010-0060-4')
+      .subscribe(response => console.log(active, event, idx)
+      );
+   }
 
 
-  // public chartClick({ event, active }: { event: MouseEvent, active: {lineChartLabels}[] }): void {
-  //   this.springerService.getDocument('978-1-4020-3574-6')
+  // public chartClicked({event, active}): void {
+  //   if (active.length > 0) {
+  //     const index = active[0]._index;
+  //     const label = this.lineChartLabels[index];
+  //     this.springerService.getDocument()
   //     .subscribe(response => {
-  //       console.log(response, this.lineChartLabels, event, active);
+  //       console.log(response, label);
   //     });
+  //   }
   // }
- }
-
+}

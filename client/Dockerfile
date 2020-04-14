@@ -1,14 +1,11 @@
-FROM node:12.14.1-alpine AS builder
+FROM node:latest as node
+WORKDIR /app
+COPY ./ /app/
+RUN npm install
+ARG configuration=production
+RUN npm run build -- --prod --configuration=$configuration
 
-WORKDIR /usr/src/app
-COPY . .
-RUN yarn && yarn build
-
-# Step 2: Use build output from 'builder'
-FROM nginx:stable-alpine
-LABEL version="1.0"
-
-COPY nginx.conf /etc/nginx/nginx.conf
-
-WORKDIR /usr/share/nginx/html
-COPY --from=builder /usr/src/app/dist/my-angular-app/ .
+# Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+FROM nginx:alpine
+COPY --from=node /app/dist/docker-angular /usr/share/nginx/html
+COPY ./nginx-custom.conf /etc/nginx/conf.d/default.conf

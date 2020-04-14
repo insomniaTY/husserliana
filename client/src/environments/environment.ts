@@ -3,17 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  firebase: {
-      apiKey: 'AIzaSyBHuG5jbezRNwMfgVFXW8Rc5Cdx7oiJvvE',
-      authDomain: 'husserliana-a1e72.firebaseapp.com',
-      databaseURL: 'https://husserliana-a1e72.firebaseio.com',
-      projectId: 'husserliana-a1e72',
-      storageBucket: 'husserliana-a1e72.appspot.com',
-      messagingSenderId: '235677494986',
-      appId: '1:235677494986:web:111dc7b1f53ba9cd890e33',
-      measurementId: 'G-M9RJJRFC12'
-  }
+  // production: false,
+  // firebase: {
+  //     apiKey: 'AIzaSyBHuG5jbezRNwMfgVFXW8Rc5Cdx7oiJvvE',
+  //     authDomain: 'husserliana-a1e72.firebaseapp.com',
+  //     databaseURL: 'https://husserliana-a1e72.firebaseio.com',
+  //     projectId: 'husserliana-a1e72',
+  //     storageBucket: 'husserliana-a1e72.appspot.com',
+  //     messagingSenderId: '235677494986',
+  //     appId: '1:235677494986:web:111dc7b1f53ba9cd890e33',
+  //     measurementId: 'G-M9RJJRFC12'
+  // }
 };
 
 /*

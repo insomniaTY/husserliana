@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, InjectionToken } from '@angular/core';
+import { NgModule, InjectionToken, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import AppRoutingModule from '../app/feature/app-routing/app-routing.module';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
@@ -29,7 +29,7 @@ import { LoginComponent } from './core/components/login/login.component';
 import { SpringerService } from './shared/springer.service';
 import { SpringerInterceptor } from './shared/springer-token.interceptor';
 import { AuthFirebaseService } from './shared/auth-firebase.service';
-import { environment } from 'src/environments/environment';
+// import { environment } from 'src/environments/environment';
 import { GermanLiteratureComponent } from './core/pages/german-literature/german-literature.component';
 import { RussianLiteratureComponent } from './core/pages/russian-literature/russian-literature.component';
 import { ForeignLiteratureComponent } from './core/pages/foreign-literature/foreign-literature.component';
@@ -73,6 +73,9 @@ export function HttpLoaderFactory(http: HttpClient) {
   // AngularFirestoreModule,
   ChartsModule
   ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+],
   exports: [],
   providers: [
     {
