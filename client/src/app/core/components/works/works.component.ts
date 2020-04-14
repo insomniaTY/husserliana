@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { SpringerService } from '../../../shared/springer.service';
+import { GoogleBooksService } from '../../../shared/googlebooks.service';
 import {ChartDataSets, ChartElementsOptions, ChartOptions} from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
@@ -49,35 +49,35 @@ export class WorksComponent implements OnInit {
   lineChartType = 'line';
 
 
- constructor(private springerService: SpringerService) {}
+ constructor(private googleBooksService: GoogleBooksService) {}
 
  ngOnInit() {
-   this.document$ = this.springerService
+   this.document$ = this.googleBooksService
      .getDocument('lxftCAAAQBAJ');
 
-   this.springerService
+   this.googleBooksService
      .getDocument('lxftCAAAQBAJ')
      .subscribe(response => {
        console.log((response));
      });
   }
 
-  public chartClicked({ event, active}: { event: MouseEvent, active: {lineChartLabels}[] }): void {
-    const idx = active[0].xScale._ticks[3];
-    this.springerService.getDocument('10.1007/978-94-010-0060-4')
-      .subscribe(response => console.log(active, event, idx)
-      );
-   }
+  // public chartClicked({ event, active}: { event: MouseEvent, active: {lineChartLabels}[] }): void {
+  //   const idx = active[0].xScale._ticks[3];
+  //   this.springerService.getDocument('10.1007/978-94-010-0060-4')
+  //     .subscribe(response => console.log(active, event, idx)
+  //     );
+  //  }
 
 
-  // public chartClicked({event, active}): void {
-  //   if (active.length > 0) {
-  //     const index = active[0]._index;
-  //     const label = this.lineChartLabels[index];
-  //     this.springerService.getDocument()
-  //     .subscribe(response => {
-  //       console.log(response, label);
-  //     });
-  //   }
-  // }
+  public chartClicked({event, active}): void {
+    if (active.length > 0) {
+      const index = active[0]._index;
+      const label = this.lineChartLabels[index];
+      this.googleBooksService.getDocument()
+      .subscribe(response => {
+        console.log(response, label);
+      });
+    }
+  }
 }

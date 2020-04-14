@@ -26,8 +26,8 @@ import { BibliographyComponent } from './core/components/bibliography/bibliograp
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { LoginComponent } from './core/components/login/login.component';
 
-import { SpringerService } from './shared/springer.service';
-import { SpringerInterceptor } from './shared/springer-token.interceptor';
+import { GoogleBooksService } from './shared/googlebooks.service';
+import { GoogleBooksInterceptor } from './shared/googlebooks-token.interceptor';
 import { AuthFirebaseService } from './shared/auth-firebase.service';
 // import { environment } from 'src/environments/environment';
 import { GermanLiteratureComponent } from './core/pages/german-literature/german-literature.component';
@@ -80,7 +80,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: SpringerInterceptor,
+      useClass: GoogleBooksInterceptor,
       multi: true
     }
   ],

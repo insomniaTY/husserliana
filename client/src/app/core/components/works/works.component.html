@@ -13,7 +13,7 @@
 </div>
 
 <div *ngIf="document$ | async as document" class="container shadow-lg">
-  <p>{{ document.kind.id | json }}</p>
+  <p>{{ document.items[1].volumeInfo.title | json }}</p>
 </div>
 
 
