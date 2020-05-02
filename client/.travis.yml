@@ -1,13 +1,17 @@
 language: node_js
 node_js:
-  - "12.16.1"
-dist: trusty
-sudo: required
-branches:
-  only:
-  - master
-before_script:
-  - npm install -g @angular/cli
+- 12
+addons:
+  chrome: stable
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
 script:
-- ng lint
-- ng build --prod --base-href https://t-palmer.github.io/travis-demo/
+- npm run test
+deploy:
+  provider: heroku
+  api_key:
+    secure: kCkKtxrEF1Ew9qt1GoUoKjHJXnw9AmfiQ5osgOqLfPlsy2g13SpgSGHSqjJxIvIV2ShR2S3uTNJVhfiNb5bmYbwvJHLKvKbntRWtKN1Jvj28Ey/F+AXZ+NU2xm7eRK8Zjk9SAhIdDj1NFJMb7hTnvb/W3S5LhSG5cEbujBtMAT30L0HIrhgTJXLwcFo0jPeFyjXgS6d1Dxp7hHGcNKLTRNC1Qy/+c5HyApc0BqYd+eUCf/O2K/6c0e5Lme29VjmCCg648z1lvINZIiTwCmj31abgVTe26x40ysPf4Pww/KdGamgzFDs2EP0/qRWjXQR6xmGsv+Y/E5t7a5StPiZ4uJM+vsq/zK9CS8S8UsMxDSn0gqouaR86jn9Uq+1fvtuQfHpD2LjiyTCnNfGrr8kAQ7u6CYjAl+LQJkDVsgTt779DQ5zCjLPgiGUi8MPgwAOXJrAz67jCxIA6SvyhNU2cEhVx4/2Y7xsrOXcIOI1KX2JwsX1tqZDE7zcxwdYgiCRIlZuv7PhXslPYGByi60Q7KUIG6h9BrIA9VOs8YnkEIfLxarmeL+dB+RWIcFZq01N/vQhSy/fNpCmIeiYRr2LVSdKrzyICioRcegDIhqGRzTwiuqKKSHnC1JHlwcAhahTDTloUUiln5yMgjUvSTmahODyvdZvrmWnwFu70Z6mA0hk=
+  app: husserliana
