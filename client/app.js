@@ -3,10 +3,10 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname + '/dist/husserliana'));
+app.use(express.static(__dirname + '/dist/husserliana/client'));
 
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/husserliana.index.html'));
+  res.sendFile(path.join(__dirname + '/dist/husserliana/client.index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
