@@ -4,7 +4,8 @@ import { GoogleBooksService } from '../../../shared/googlebooks.service';
 import {ChartDataSets, ChartElementsOptions, ChartOptions} from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
-import {fromEvent, Observable, pipe} from 'rxjs';
+import { map, filter } from 'rxjs/operators';
+import { Observable, pipe } from 'rxjs';
 
 
 @Component({
@@ -53,10 +54,10 @@ export class WorksComponent implements OnInit {
 
  ngOnInit() {
    this.document$ = this.googleBooksService
-     .getDocument('lxftCAAAQBAJ');
+     .getData();
 
    this.googleBooksService
-     .getDocument('lxftCAAAQBAJ')
+     .getData()
      .subscribe(response => {
        console.log((response));
      });
@@ -74,7 +75,10 @@ export class WorksComponent implements OnInit {
     if (active.length > 0) {
       const index = active[0]._index;
       const label = this.lineChartLabels[index];
-      this.googleBooksService.getDocument()
+      this.googleBooksService.getData()
+      .pipe(
+        filter(response => response === 200)
+      )
       .subscribe(response => {
         console.log(response, label);
       });

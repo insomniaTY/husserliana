@@ -24,3 +24,7 @@
 .text-description {
   text-align: initial;
 }
+
+.img-fluid {
+  height: 300px;
+}

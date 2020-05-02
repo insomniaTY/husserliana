@@ -13,7 +13,11 @@
 </div>
 
 <div *ngIf="document$ | async as document" class="container shadow-lg">
-  <p>{{ document.items[1].volumeInfo.title | json }}</p>
+  <p>Автор: {{ document.items[0].volumeInfo.authors  }}</p>
+  <p>Название: {{ document.items[0].volumeInfo.subtitle }}</p>
+  <p>Краткое описание: {{ document.items[0].volumeInfo.description  }}</p>
+  <pre>{{ document.selfLink }}</pre>
+  <img class="img-fluid" [src]="document.items[0].volumeInfo.imageLinks.thumbnail" alt="">
 </div>
 
 

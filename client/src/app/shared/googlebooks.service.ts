@@ -1,5 +1,5 @@
 import { Injectable, InjectionToken } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
 import {Observable, pipe} from 'rxjs';
 import { Book } from './book';
 
@@ -19,13 +19,19 @@ export class GoogleBooksService {
 
   constructor(private http: HttpClient ) {}
 
-  getDocument(book: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/books/v1/volumes?q={search}`)
-      .pipe(
-        map((data) => data)
-      );
+  // getDocument(book: any): Observable<any> {
+  //   return this.http.get(`${this.baseUrl}/books/v1/volumes?q={search}`)
+  //     .pipe(
+  //       map((data) => data)
+  //     );
+  // }
 
-  //   // www.googleapis.com/books/v1/volumes?q={search%20Philosophy%20of%20Arithmetic}
-  //
+  // https://www.googleapis.com/books/v1/volumes?q=inauthor:husserl
+
+  getData() {
+    return this.http.get(`${this.baseUrl}/books/v1/volumes?q=inauthor:husserl`)
+    .pipe(
+      map((data) => data)
+    );
   }
 }

@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 * {
   cursor: pointer;
+  box-sizing: content-box;
 }
 
 .jumbotron-fluid {
@@ -10,16 +11,18 @@
   height: 100%;
   background-repeat: no-repeat;
   background-size: 1350px;
-  margin: 40px;
+  margin: 10px;
   border-radius: 5px;
 }
 
 .display-4 {
     color: white;
+    font-size: 150px bolt;
+    padding: 90px;
 }
 
-h1 {
-    font-family: 'Karla', sans-serif;
+.lead {
+    font-family: 'Roboto', sans-serif;
     font-size: 20px bolt;
 }
 
@@ -30,19 +33,19 @@ h1 {
 }
 
 .rounded-circle {
-  width: 800px;
-  padding: 15px;
+  width: 50px;
+  height: 30px;
 }
 
 .routes-bloc {
   display: flex;
   align-items: flex-start;
-  width: 900px;
-
+  width: 400px;
 }
 
 .row {
-  margin: 40px;
+  margin: 10px;
+  height: 100%;
 }
 
 .col-xs-2 {
@@ -55,17 +58,14 @@ h1 {
 }
 
 .icon {
-  width: 50px;
-}
-
-.col-md-2 {
-
+  width: 30%;
+  height: 100%;
 }
 
 .space {
-  width: 150px;
-  height: 170px;
-  padding: 110px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
 }
 
 /* @media (max-width: 800px) and (max-width: 1200px) {
@@ -78,4 +78,16 @@ h1 {
   .routes-bloc {
     width: 100px;
   }
+}
+
+.rounded {
+  width: 35px;
+}
+
+.container {
+  display: flex;
+}
+
+.q {
+  display: inline-block;
 }
