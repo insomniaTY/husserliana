@@ -26,10 +26,11 @@ import { NgwWowService } from 'ngx-wow';
 
 export class HomeComponent implements OnInit {
 
-changeImgState = 'initial';
+changeImageState = 'initial';
 
-  constructor( private translate: TranslateService,
-               private wowService: NgwWowService) {
+  constructor(public translate: TranslateService,
+              private wowService: NgwWowService,
+              ) {
   }
 
   ngOnInit() {

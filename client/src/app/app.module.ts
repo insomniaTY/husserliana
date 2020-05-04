@@ -16,7 +16,7 @@ import { NgwWowModule } from 'ngx-wow';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
-import { ChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './core/components/home/home.component';
@@ -35,7 +35,6 @@ import { AuthFirebaseService } from './shared/auth-firebase.service';
 import { GermanLiteratureComponent } from './core/pages/german-literature/german-literature.component';
 import { RussianLiteratureComponent } from './core/pages/russian-literature/russian-literature.component';
 import { ForeignLiteratureComponent } from './core/pages/foreign-literature/foreign-literature.component';
-
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../../assets/i18n/', '.json');
@@ -73,7 +72,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   // AngularFireModule.initializeApp(environment.firebase),
   // AngularFireAuthModule,
   // AngularFirestoreModule,
-  ChartsModule
+  // ChartsModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
