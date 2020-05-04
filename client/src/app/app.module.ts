@@ -1,22 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, InjectionToken, CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, Injectable } from '@angular/core';
+import { NgModule, InjectionToken, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import AppRoutingModule from '../app/feature/app-routing/app-routing.module';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgwWowModule } from 'ngx-wow';
-
+import { ChartsModule } from 'ng2-charts';
 
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
-// import { ChartsModule } from 'ng2-charts';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './core/components/home/home.component';
@@ -69,10 +70,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   ReactiveFormsModule,
   FormsModule,
   NgwWowModule,
+  ChartsModule
   // AngularFireModule.initializeApp(environment.firebase),
   // AngularFireAuthModule,
-  // AngularFirestoreModule,
-  // ChartsModule
+  // AngularFirestoreModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

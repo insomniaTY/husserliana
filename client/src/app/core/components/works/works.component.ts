@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { GoogleBooksService } from '../../../shared/googlebooks.service';
 import {ChartDataSets, ChartElementsOptions, ChartOptions} from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-
 import { map, filter } from 'rxjs/operators';
 import { Observable, pipe } from 'rxjs';
 
@@ -50,7 +49,7 @@ export class WorksComponent implements OnInit {
   lineChartType = 'line';
 
 
- constructor(private googleBooksService: GoogleBooksService) {}
+  constructor(private googleBooksService: GoogleBooksService) {}
 
  ngOnInit() {
    this.document$ = this.googleBooksService
