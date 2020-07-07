@@ -4,8 +4,8 @@ import { GoogleBooksService } from '../../../shared/googlebooks.service';
 import {ChartDataSets, ChartElementsOptions, ChartOptions} from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 import { map, filter } from 'rxjs/operators';
-import { Observable, pipe } from 'rxjs';
-
+import { Observable, pipe, timer } from 'rxjs';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-works',
@@ -15,6 +15,8 @@ import { Observable, pipe } from 'rxjs';
 export class WorksComponent implements OnInit {
   document$: Observable<any>;
   manual: any;
+  items: any;
+  loading;
 
   r = [1, 3, 4, 5];
   lineChartData: ChartDataSets[] = [
@@ -75,11 +77,14 @@ export class WorksComponent implements OnInit {
       const index = active[0]._index;
       const label = this.lineChartLabels[index];
       this.googleBooksService.getData()
-      .pipe(
-        filter(response => response === 200)
-      )
       .subscribe(response => {
-        console.log(response, label);
+        this.document$.subscribe(
+          pipe(
+            map(value => {
+              console.log(value, response);
+            })
+          )
+        );
       });
     }
   }

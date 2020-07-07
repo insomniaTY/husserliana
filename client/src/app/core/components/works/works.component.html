@@ -1,25 +1,33 @@
-<h2 class="heading-3">Работы Эдмунда Гуссерля</h2>
-<div class="chart-wrapper">
-  <canvas baseChart
-          [datasets]="lineChartData"
-          [labels]="lineChartLabels"
-          [options]="lineChartOptions"
-          [colors]="lineChartColors"
-          [legend]="lineChartLegend"
-          [chartType]="lineChartType"
-          [plugins]="lineChartPlugins"
-          (chartClick)="chartClicked($event)">
-  </canvas>
+<div class="jumbotron pt-md-5" *ngIf="document$ | async as document" class="container shadow-lg">
+  <h2 class="heading-3">Работы Эдмунда Гуссерля</h2>
+  <div class="chart-wrapper col-md-12">
+    <canvas class="container-fluid col-md-6" baseChart
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType"
+            [plugins]="lineChartPlugins"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <accordion>
+        <accordion-group heading="Information about Husserl's Work">
+          <p class="lead">Автор: {{ document.items[0].volumeInfo.authors  }}</p>
+          <p class="lead">Название: {{ document.items[1].volumeInfo.title }}</p>
+          <p class="lead">Краткое описание: {{ document.items[0].volumeInfo.description  }}</p>
+          <pre>{{ document.selfLink }}</pre>
+        </accordion-group>
+        <accordion-group heading="Book Image">
+          <img class="rounded col-md-6" [src]="document.items[0].volumeInfo.imageLinks.thumbnail" alt="">
+        </accordion-group>
+      </accordion>
+    </div>
+  </div>
 </div>
-
-<div *ngIf="document$ | async as document" class="container shadow-lg">
-  <p>Автор: {{ document.items[0].volumeInfo.authors  }}</p>
-  <p>Название: {{ document.items[0].volumeInfo.subtitle }}</p>
-  <p>Краткое описание: {{ document.items[0].volumeInfo.description  }}</p>
-  <pre>{{ document.selfLink }}</pre>
-  <img class="img-fluid" [src]="document.items[0].volumeInfo.imageLinks.thumbnail" alt="">
-</div>
-
 
 <div class="jumbotron jumbotron-fluid">
   <div class="container">

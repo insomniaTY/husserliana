@@ -21,20 +21,25 @@ import { NgwWowService } from 'ngx-wow';
       transition('initial <=> final', animate(700)),
       transition('initial => final', animate(700))
     ])
-  ]
+  ],
+  // providers: [
+  //   {
+  //
+  //   }
+  // ]
 })
 
 export class HomeComponent implements OnInit {
 
 changeImageState = 'initial';
 
-  constructor(public translate: TranslateService,
+  constructor(private translocoService: TranslateService,
               private wowService: NgwWowService,
               ) {
   }
 
   ngOnInit() {
-    this.translate.use('ru');
+    this.translocoService.use('ru');
     this.wowService.init();
   }
 

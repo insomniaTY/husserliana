@@ -19,19 +19,13 @@ export class GoogleBooksService {
 
   constructor(private http: HttpClient ) {}
 
-  // getDocument(book: any): Observable<any> {
-  //   return this.http.get(`${this.baseUrl}/books/v1/volumes?q={search}`)
-  //     .pipe(
-  //       map((data) => data)
-  //     );
-  // }
-
-  // https://www.googleapis.com/books/v1/volumes?q=inauthor:husserl
-
   getData() {
     return this.http.get(`${this.baseUrl}/books/v1/volumes?q=inauthor:husserl`)
     .pipe(
       map((data) => data)
     );
+  }
+  getBooks(queryField: string) {
+    return this.http.get(`${this.baseUrl}/books/v1/volumes?q=${queryField}&maxResults`);
   }
 }

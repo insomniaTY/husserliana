@@ -1,20 +1,10 @@
-version: '2'
+version: '2.1'
 
 services:
-
-  web:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    container_name: husserliana/client
-    image: husserliana/client
-    networks:
-      - prod-network
-    ports:
-      - '80:80'
+  angular-nginx-docker:
+    image: client
+    build: .
     environment:
-    - PORT=80
-
-networks:
-  prod-network:
-    driver: bridge
+      NODE_ENV: production
+    ports:
+      - 80:80

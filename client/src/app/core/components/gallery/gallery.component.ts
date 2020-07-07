@@ -13,7 +13,5 @@ export class GalleryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-   fromEvent(document.images, 'click')
-     .subscribe(event => console.log(event));
   }
 }

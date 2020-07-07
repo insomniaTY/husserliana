@@ -9,16 +9,19 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit   {
 
 
-  constructor(public translate: TranslateService) {
-
-    translate.setDefaultLang('ru');
-
-    translate.addLangs(['eng', 'de']);
-    translate.setDefaultLang('ru');
-
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|de/) ? browserLang : 'ru');
+  constructor(private translocoService: TranslateService) {
   }
 
-  ngOnInit() {}
+
+  // public ActiveLang(lang: string) {
+  //   this.translocoService.setActiveLang(lang);
+  // }
+
+  ngOnInit() {
+    this.translocoService.setDefaultLang('ru');
+    this.translocoService.addLangs(['eng', 'de']);
+    this.translocoService.setDefaultLang('ru');
+    const browserLang = this.translocoService.getBrowserLang();
+    this.translocoService.use(browserLang.match(/en|de/) ? browserLang : 'ru');
+  }
 }

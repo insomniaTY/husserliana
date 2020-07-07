@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgwWowModule } from 'ngx-wow';
 import { ChartsModule } from 'ng2-charts';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -36,6 +37,7 @@ import { AuthFirebaseService } from './shared/auth-firebase.service';
 import { GermanLiteratureComponent } from './core/pages/german-literature/german-literature.component';
 import { RussianLiteratureComponent } from './core/pages/russian-literature/russian-literature.component';
 import { ForeignLiteratureComponent } from './core/pages/foreign-literature/foreign-literature.component';
+import {TranslocoModule} from '@ngneat/transloco';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '../../../assets/i18n/', '.json');
@@ -61,19 +63,21 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
-          provide: TranslateLoader,
-          useFactory: HttpLoaderFactory,
-          deps: [HttpClient]
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
       }
-  }),
-  HttpClientModule,
-  ReactiveFormsModule,
-  FormsModule,
-  NgwWowModule,
-  ChartsModule
-  // AngularFireModule.initializeApp(environment.firebase),
-  // AngularFireAuthModule,
-  // AngularFirestoreModule
+    }),
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    NgwWowModule,
+    ChartsModule,
+    AccordionModule.forRoot(),
+    TranslocoModule,
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireAuthModule,
+    // AngularFirestoreModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
