@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { trigger, state, style, animate, transition, useAnimation } from '@angular/animations';
 import { NgwWowService } from 'ngx-wow';
+import { TranslocoService } from '@ngneat/transloco';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
 
 changeImageState = 'initial';
 
-  constructor(private translocoService: TranslateService,
+  constructor(private translocoService: TranslocoService,
               private wowService: NgwWowService,
               ) {
   }

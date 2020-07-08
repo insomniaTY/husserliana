@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import {TranslateModule} from '@ngx-translate/core';
 
 import { HomeComponent } from 'src/app/core/components/home/home.component';
 import { BioComponent } from 'src/app/core/components/bio/bio.component';
@@ -46,8 +45,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
-    FormsModule,
-    TranslateModule
+    FormsModule
   ],
   exports: [RouterModule]
 })

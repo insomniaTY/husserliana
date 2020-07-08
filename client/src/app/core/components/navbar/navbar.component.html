@@ -32,13 +32,13 @@
         </button>
         <button routerLink="login" class="btn btn-light">Login</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <button class="dropdown-item btn-light" >
+          <button class="dropdown-item btn-light" (click)="setTranslation('en')">
             ru
           </button>
-          <button class="dropdown-item btn-light">
+          <button class="dropdown-item btn-light" (click)="setTranslation('en')">
             en
           </button>
-          <button class="dropdown-item btn-light" (click)="setActiveLang('en')">
+          <button class="dropdown-item btn-light" (click)="setTranslation('en')">
             de
           </button>
         </div>

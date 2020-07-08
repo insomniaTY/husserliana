@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslocoService } from '@ngneat/transloco';
+import { getBrowserLang } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-navbar',
@@ -9,11 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit   {
 
 
-  constructor(private translocoService: TranslateService) {
+  constructor(private translocoService: TranslocoService) {
   }
-
-
-  // public ActiveLang(lang: string) {
+  // public setTranslation(lang: string) {
   //   this.translocoService.setActiveLang(lang);
   // }
 
@@ -21,6 +20,7 @@ export class NavbarComponent implements OnInit   {
     this.translocoService.setDefaultLang('ru');
     this.translocoService.addLangs(['eng', 'de']);
     this.translocoService.setDefaultLang('ru');
+    this.translocoService.setActiveLang(lang);
     const browserLang = this.translocoService.getBrowserLang();
     this.translocoService.use(browserLang.match(/en|de/) ? browserLang : 'ru');
   }

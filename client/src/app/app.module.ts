@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, InjectionToken, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import AppRoutingModule from '../app/feature/app-routing/app-routing.module';
-import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+// import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
+// import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -37,11 +37,10 @@ import { AuthFirebaseService } from './shared/auth-firebase.service';
 import { GermanLiteratureComponent } from './core/pages/german-literature/german-literature.component';
 import { RussianLiteratureComponent } from './core/pages/russian-literature/russian-literature.component';
 import { ForeignLiteratureComponent } from './core/pages/foreign-literature/foreign-literature.component';
-import {TranslocoModule} from '@ngneat/transloco';
+import { TranslocoModule, TRANSLOCO_CONFIG } from '@ngneat/transloco';
+import { TranslocoRootModule } from './transloco-root.module';
+import { TranslocoLocaleModule } from '@ngneat/transloco-locale';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, '../../../assets/i18n/', '.json');
-}
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,13 +60,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    }),
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
@@ -75,6 +67,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     ChartsModule,
     AccordionModule.forRoot(),
     TranslocoModule,
+    TranslocoRootModule,
+    TranslocoLocaleModule.init({
+      langToLocaleMapping: {
+            en: 'en-US',
+              ru: 'ru-RU',
+              de: 'de'
+        }})
     // AngularFireModule.initializeApp(environment.firebase),
     // AngularFireAuthModule,
     // AngularFirestoreModule
