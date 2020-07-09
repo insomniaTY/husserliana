@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit   {
 
   ngOnInit() {
     this.translocoService.setDefaultLang('ru');
-    this.translocoService.setAvailableLangs(['en', 'de']);
     const browserLang = this.translocoService.getActiveLang();
     this.translocoService.getTranslation(browserLang.match(/en|de/) ? browserLang : 'ru');
   }
