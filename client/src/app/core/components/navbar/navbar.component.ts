@@ -12,16 +12,14 @@ export class NavbarComponent implements OnInit   {
 
   constructor(private translocoService: TranslocoService) {
   }
-  // public setTranslation(lang: string) {
-  //   this.translocoService.setActiveLang(lang);
-  // }
+  public setTranslation(lang: string) {
+    this.translocoService.setActiveLang(lang);
+  }
 
   ngOnInit() {
     this.translocoService.setDefaultLang('ru');
-    this.translocoService.addLangs(['eng', 'de']);
-    this.translocoService.setDefaultLang('ru');
-    this.translocoService.setActiveLang(lang);
-    const browserLang = this.translocoService.getBrowserLang();
-    this.translocoService.use(browserLang.match(/en|de/) ? browserLang : 'ru');
+    this.translocoService.setAvailableLangs(['en', 'de']);
+    const browserLang = this.translocoService.getActiveLang();
+    this.translocoService.getTranslation(browserLang.match(/en|de/) ? browserLang : 'ru');
   }
 }
