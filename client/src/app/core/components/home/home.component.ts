@@ -39,13 +39,10 @@ changeImageState = 'initial';
   }
 
   ngOnInit() {
-    this.translocoService.setDefaultLang('ru');
-    this.translocoService.setAvailableLangs(['en', 'de']);
     this.wowService.init();
   }
 
   reset() {
     this.wowService.init();
   }
-
 }
